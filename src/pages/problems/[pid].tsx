@@ -4,6 +4,8 @@ import useHasMounted from "@/hooks/useHasMounted";
 import { problems } from "@/utils/problems";
 import { Problem } from "@/utils/types/problem";
 import React from "react";
+import { collection } from "firebase/firestore";
+import { db } from "@/firebase/firebase";
 
 type ProblemPageProps = {
 	problem: Problem;
@@ -55,3 +57,5 @@ export async function getStaticProps({ params }: { params: { pid: string } }) {
 		},
 	};
 }
+
+const usersRef = collection(db, "users"); 

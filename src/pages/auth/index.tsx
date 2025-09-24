@@ -1,8 +1,9 @@
 import { authModalState } from "@/atoms/authModalAtom";
 import AuthModal from "@/components/Modals/AuthModal";
 import Navbar from "@/components/Navbar/Navbar";
+import { auth, db } from "@/firebase/firebase"; // or use relative path if alias is not set
 import { useAuthState } from "react-firebase-hooks/auth";
-import { auth } from "@/firebase/firebase";
+import { doc, getDoc, setDoc } from "firebase/firestore";
 import { useRecoilValue } from "recoil";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
@@ -11,12 +12,29 @@ type AuthPageProps = {};
 
 const AuthPage: React.FC<AuthPageProps> = () => {
 	const authModal = useRecoilValue(authModalState);
-	const [user, loading, error] = useAuthState(auth);
+	const [user, loading] = useAuthState(auth);
 	const [pageLoading, setPageLoading] = useState(true);
 	const router = useRouter();
 
 	useEffect(() => {
-		if (user) router.push("/");
+		if (user) {
+			const createUserDoc = async () => {
+				const userDocRef = doc(db, "users", user.uid);
+				const userDoc = await getDoc(userDocRef);
+				if (!userDoc.exists()) {
+					await setDoc(userDocRef, {
+						email: user.email,
+						createdAt: new Date(),
+						solvedProblems: [],
+						likedProblems: [],
+						dislikedProblems: [],
+						starredProblems: [],
+					});
+				}
+			};
+			createUserDoc();
+			router.push("/");
+		}
 		if (!loading && !user) setPageLoading(false);
 	}, [user, router, loading]);
 

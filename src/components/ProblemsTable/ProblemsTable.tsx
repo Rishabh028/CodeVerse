@@ -5,7 +5,9 @@ import { AiFillYoutube } from "react-icons/ai";
 import { IoClose } from "react-icons/io5";
 import YouTube from "react-youtube";
 import { collection, doc, getDoc, getDocs, orderBy, query } from "firebase/firestore";
-import { auth, firestore } from "@/firebase/firebase";
+import { db, auth } from "@/firebase/firebase";
+import { getAuth } from "firebase/auth";
+const usersRef = collection(db, "users");
 import { DBProblem } from "@/utils/types/problem";
 import { useAuthState } from "react-firebase-hooks/auth";
 
@@ -122,7 +124,7 @@ function useGetProblems(setLoadingProblems: React.Dispatch<React.SetStateAction<
 		const getProblems = async () => {
 			// fetching data logic
 			setLoadingProblems(true);
-			const q = query(collection(firestore, "problems"), orderBy("order", "asc"));
+			const q = query(collection(db, "problems"), orderBy("order", "asc"));
 			const querySnapshot = await getDocs(q);
 			const tmp: DBProblem[] = [];
 			querySnapshot.forEach((doc) => {
@@ -143,7 +145,7 @@ function useGetSolvedProblems() {
 
 	useEffect(() => {
 		const getSolvedProblems = async () => {
-			const userRef = doc(firestore, "users", user!.uid);
+			const userRef = doc(db, "users", user!.uid);
 			const userDoc = await getDoc(userRef);
 
 			if (userDoc.exists()) {
@@ -157,3 +159,6 @@ function useGetSolvedProblems() {
 
 	return solvedProblems;
 }
+
+/* Firebase initialization removed to avoid conflict with imported db and auth */
+console.log("db instance:", db);

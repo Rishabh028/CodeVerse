@@ -1,5 +1,5 @@
 import { authModalState } from "@/atoms/authModalAtom";
-import { auth, firestore } from "@/firebase/firebase";
+import { auth, db } from "@/firebase/firebase";
 import { useEffect, useState } from "react";
 import { useSetRecoilState } from "recoil";
 import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
@@ -16,7 +16,7 @@ const Signup: React.FC<SignupProps> = () => {
 	};
 	const [inputs, setInputs] = useState({ email: "", displayName: "", password: "" });
 	const router = useRouter();
-	const [createUserWithEmailAndPassword, user, loading, error] = useCreateUserWithEmailAndPassword(auth);
+	const [createUserWithEmailAndPassword, users, loading, error] = useCreateUserWithEmailAndPassword(auth);
 	const handleChangeInput = (e: React.ChangeEvent<HTMLInputElement>) => {
 		setInputs((prev) => ({ ...prev, [e.target.name]: e.target.value }));
 	};
@@ -39,7 +39,7 @@ const Signup: React.FC<SignupProps> = () => {
 				solvedProblems: [],
 				starredProblems: [],
 			};
-			await setDoc(doc(firestore, "users", newUser.user.uid), userData);
+			await setDoc(doc(db, "users", newUser.user.uid), userData);
 			router.push("/");
 		} catch (error: any) {
 			toast.error(error.message, { position: "top-center" });

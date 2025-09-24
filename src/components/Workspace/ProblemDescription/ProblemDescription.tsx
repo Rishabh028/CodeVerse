@@ -1,6 +1,8 @@
 import CircleSkeleton from "@/components/Skeletons/CircleSkeleton";
 import RectangleSkeleton from "@/components/Skeletons/RectangleSkeleton";
-import { auth, firestore } from "@/firebase/firebase";
+import { auth } from "@/firebase/firebase";
+import { getFirestore } from "firebase/firestore";
+const firestore = getFirestore();
 import { DBProblem, Problem } from "@/utils/types/problem";
 import { arrayRemove, arrayUnion, doc, getDoc, runTransaction, updateDoc } from "firebase/firestore";
 import { useEffect, useState } from "react";

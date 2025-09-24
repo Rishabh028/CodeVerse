@@ -13,7 +13,7 @@ const Login: React.FC<LoginProps> = () => {
 		setAuthModalState((prev) => ({ ...prev, type }));
 	};
 	const [inputs, setInputs] = useState({ email: "", password: "" });
-	const [signInWithEmailAndPassword, user, loading, error] = useSignInWithEmailAndPassword(auth);
+	const [signInWithEmailAndPassword, users, loading, error] = useSignInWithEmailAndPassword(auth);
 	const router = useRouter();
 	const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 		setInputs((prev) => ({ ...prev, [e.target.name]: e.target.value }));
