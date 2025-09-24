@@ -12,7 +12,7 @@ You can try out the live application here: **[https://code-verse-6ji0ghvlk-risha
 
 *Replace the placeholder links below with screenshots of your application.*
 
-![Homepage & Problem List](./path/to/your/homepage-screenshot.png)
+![Homepage & Problem List](.public/Screenshot2025-09-24183114.png)
 _Caption: The homepage displaying the list of available coding problems._
 
 ![Problem Workspace & Code Editor](./path/to/your/workspace-screenshot.png)
