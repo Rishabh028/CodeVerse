@@ -1,4 +1,5 @@
 import CircleSkeleton from "@/components/Skeletons/CircleSkeleton";
+import Image from "next/image";
 import RectangleSkeleton from "@/components/Skeletons/RectangleSkeleton";
 import { auth } from "@/firebase/firebase";
 import { getFirestore } from "firebase/firestore";
@@ -234,7 +235,8 @@ const ProblemDescription: React.FC<ProblemDescriptionProps> = ({ problem, _solve
 							{problem.examples.map((example, index) => (
 								<div key={example.id}>
 									<p className='font-medium text-white '>Example {index + 1}: </p>
-									{example.img && <img src={example.img} alt='' className='mt-3' />}
+									{example.img && <Image src={example.img} alt='problem example' className='mt-3' width={400} height={300} />}
+
 									<div className='example-card'>
 										<pre>
 											<strong className='text-white'>Input: </strong> {example.inputText}
