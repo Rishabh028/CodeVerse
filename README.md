@@ -5,7 +5,7 @@ CodeVerse is a feature-rich, web-based platform designed as a LeetCode clone. It
 ---
 ## ✨ Live Demo
 
-You can try out the live application here: **[https://code-verse-6ji0ghvlk-rishabh028s-projects.vercel.app/](https://code-verse-6ji0ghvlk-rishabh028s-projects.vercel.app/)**
+You can try out the live application here: **[CodeVerse](https://code-verse-6ji0ghvlk-rishabh028s-projects.vercel.app/)**
 
 ---
 ## 📸 Screenshots
