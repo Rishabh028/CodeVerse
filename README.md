@@ -1,3 +1,9 @@
+<div align="center">
+
+  <!-- Animated Logo/Banner -->
+  <!-- Replace this with a cool GIF of your app in action! -->
+  <img src="public/logo1.png" alt="CodeVerse showcase" width="300"/>
+  
 # CodeVerse 🚀
 
 CodeVerse is a feature-rich, web-based platform designed as a LeetCode clone. It provides a space for developers to practice and hone their data structures and algorithms skills with an interactive coding environment, detailed problem descriptions, and user progress tracking.
@@ -8,6 +14,7 @@ CodeVerse is a feature-rich, web-based platform designed as a LeetCode clone. It
 You can try out the live application here: **[CodeVerse](https://code-verse-6ji0ghvlk-rishabh028s-projects.vercel.app/)**
 
 ---
+</div>
 ## 📸 Screenshots
 
 *Replace the placeholder links below with screenshots of your application.*
