@@ -12,10 +12,10 @@ You can try out the live application here: **[CodeVerse](https://code-verse-6ji0
 
 *Replace the placeholder links below with screenshots of your application.*
 
-![Homepage & Problem List](.public/Screenshot2025-09-24183114.png)
+![Homepage & Problem List](.public/img1.png)
 _Caption: The homepage displaying the list of available coding problems._
 
-![Problem Workspace & Code Editor](./path/to/your/workspace-screenshot.png)
+![Problem Workspace & Code Editor](.public/img2.png)
 _Caption: The interactive workspace for solving a specific problem._
 
 ---
