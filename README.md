@@ -2,7 +2,7 @@
 
   <!-- Animated Logo/Banner -->
   <!-- Replace this with a cool GIF of your app in action! -->
-  <img src="public/logo1.png" alt="CodeVerse showcase" width="300"/>
+  <img src="public/ logo-full.png" alt="CodeVerse showcase" width="300"/>
   
 # CodeVerse 🚀
 
