@@ -14,6 +14,7 @@ You can try out the live application here: **[ CodeVerse 🚀](https://code-vers
 
 ---
 </div>
+
 ## 📸 Screenshots
 
 *Replace the placeholder links below with screenshots of your application.*
